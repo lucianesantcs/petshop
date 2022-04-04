@@ -1,0 +1,28 @@
+@import './variables';
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid $dark;
+  
+  tr {
+    background-color: lighten($amarelo, 5);
+    &:nth-child(even) {
+      background-color: lighten($amarelo, 10);
+    }
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  th {
+    padding: 10px;
+    font-weight: bold;
+    background-color: $amarelo;
+  }
+  
+  thead {
+    border: 1px solid $dark;
+  }
+}

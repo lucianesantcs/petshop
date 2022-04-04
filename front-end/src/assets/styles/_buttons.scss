@@ -1,0 +1,27 @@
+@import './variables';
+
+a, button {
+  text-decoration: none;
+  background-color: $amarelo;
+  color: $branco;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+  border: none;
+  &:hover {
+    background-color: darken($amarelo, 10);
+  }
+}
+
+table {
+  a, button {
+    font-size: 11px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid darken($amarelo, 10);
+    margin: 1px;
+  }
+}

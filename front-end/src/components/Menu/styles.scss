@@ -1,0 +1,19 @@
+@import '../../assets/styles/variables';
+
+.menu {
+  background-color: $amarelo;
+  display: flex;
+  justify-content: space-around;
+
+  &__link {
+    color: $dark;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+
+    &:hover {
+      background-color: darken($amarelo, 10);
+      font-weight: bold;
+    }
+  }
+}
