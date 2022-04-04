@@ -9,9 +9,20 @@ const listarClientes = () =>
   //   .then(resposta => resposta.data)
 
 const buscarClientePorId = id => 
-  api
-    .get(`/clientes/cliente/${id}`)
-    .then(resposta => resposta.data[0])
+  fetch('http://localhost:4000', opcoesFetch(`
+    query {
+      cliente(id: "${id}") {
+        nome
+        cpf
+      }
+    }
+  `))
+  .then(resposta => resposta.json())
+  .then(dados => dados.data.cliente)
+
+  // api
+  //   .get(`/clientes/cliente/${id}`)
+  //   .then(resposta => resposta.data[0])
 
 const adicionarCliente = cliente => 
   fetch('http://localhost:4000', opcoesFetch(`
