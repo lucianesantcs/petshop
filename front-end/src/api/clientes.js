@@ -1,9 +1,12 @@
-import { api } from './config'
+import { api, opcoesFetch } from './config'
 
 const listarClientes = () => 
-  api
-    .get('/clientes')
-    .then(resposta => resposta.data)
+  fetch('http://localhost:4000', opcoesFetch('{ clientes { nome cpf } }'))
+  .then(resposta => resposta.json())
+  .then(dados => dados.data.clientes)
+  // api
+  //   .get('/clientes')
+  //   .then(resposta => resposta.data)
 
 const buscarClientePorId = id => 
   api
